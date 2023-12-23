@@ -1,0 +1,41 @@
+{% extends "coderapp/index.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Este es el título del Inicio que cambio</h1>
+  
+
+    <h3>Podes buscar un album pendiente para escuchar!:</h3>
+
+    <form action="/coderapp/buscar/" method="GET">
+
+        <input type="number" name="año" id="año">
+
+        <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+
+    
+
+    {% if AlbumesPendiente %}
+
+    <p>Estamos buscando el: {{año}}</p>
+
+    <ul>
+	{% for AlbumesPendiente in AlbumesPendientes %}
+		<li> {{AlbumesPendiente.nombre}} </li>
+		<li> {{AlbumesPendiente.camada}} </li>
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+{% endblock %}

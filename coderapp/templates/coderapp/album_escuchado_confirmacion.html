@@ -1,0 +1,11 @@
+{% extends 'coderapp/index.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <h2>Álbum Agregado con Éxito!</h2>
+    <p>Nombre: {{ album.nombre }}</p>
+    <p>Año: {{ album.año }}</p>
+    <!-- Puedes mostrar más información según tus necesidades -->
+{% endblock %}

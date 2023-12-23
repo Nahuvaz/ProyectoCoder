@@ -1,0 +1,20 @@
+{% extends "coderapp/index.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <!-- Aquí va lo que cambia, y lo asociado a esta vista :) -->
+    <h1>Artistas nuevos que descubri</h1>
+
+    {% if artistas %}
+        <ul>
+            {% for artista in artistas %}
+                <li>{{ artista.nombre }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay artistas disponibles.</p>
+    {% endif %}
+
+{% endblock %}
